@@ -25,34 +25,17 @@
     <!-- leaflet Css-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- flag Css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         #map-container {
             position: relative;
         }
-        #map {
+        #map2 {
             height: 700px;
             width: 100%;
         }
-        .legend-card {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Aligns the card to the right side */
-            width: 250px; /* Adjust width as needed */
-            z-index: 1000; /* Ensure the card is on top of the map */
-            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-            border: 1px solid #ddd; /* Border color */
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .legend-color-box {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
+        
         .navbar-nav .nav-item .badge {
             position: absolute;
             top: 0;
@@ -62,25 +45,37 @@
             background-color: #333; /* Dark gray color */
             color: #fff; /* White text color */
         }
-         .custom-marker {
+
+        .custom-marker {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background-color: red; /* Default color */
-            display: inline-block;
+            background-color: #ff7800; /* Varsayılan renk */
             border: 2px solid white;
+            display: inline-block;
         }
         
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
     </style>
 </head>
-        <div class="layout-wrapper landing">
-            {% include 'partials/topbar.html' %}
-            {% include 'partials/sub-topbar.html' %}
+<body>
+    <div class="layout-wrapper landing">
+        {% include 'partials/topbar.html' %}
+        {% include 'partials/sub-topbar.html' %}
         <div id="map-container">
-            <div id="map"></div>
+            <div id="map2"></div>
             <div class="card legend-card">
                 <div class="card-body">
-                    
                     <div class="legend-item">
                         <div class="legend-color-box" style="background-color: #ff0000;"></div>
                         <span>Hoard</span>
@@ -101,9 +96,7 @@
                 </div>
             </div>
         </div>
-
-        </div>
-        <!-- end layout wrapper -->
+    </div>
     <!-- JAVASCRIPT -->
     <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'libs/simplebar/simplebar.min.js' %}"></script>
@@ -117,8 +110,8 @@
     <script src="{% static 'js/pages/job-lading.init.js' %}"></script>
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-     <!-- prismjs plugin -->
-     <script src="{% static 'libs/prismjs/prism.js'%}"></script>
+    <!-- prismjs plugin -->
+    <script src="{% static 'libs/prismjs/prism.js'%}"></script>
     <script>
         function changeLanguage(language) {
             // Bu fonksiyon dil değişikliği işlemini gerçekleştirecek
@@ -132,41 +125,56 @@
         }
     </script>
     <script>
-        var map = L.map('map').setView([37.2153, 28.3636], 6);
+        // Harita başlatma
+        var map = L.map('map2').setView([37.2153, 28.3636], 6);
 
+        // Harita katmanı
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        function createCustomIcon(color) {
-            return L.divIcon({
-                className: 'custom-marker',
-                html: '<div style="background-color:' + color + '"></div>',
-                iconSize: [20, 20],
-                iconAnchor: [10, 10],
-                popupAnchor: [0, -10]
-            });
-        }
-
-        // Adding markers with custom colors for different cities
-        var markers = [
-            { coords: [36.8969, 30.7133], popup: "<b>X coin</b>", color: 'red' },    // Antalya
-            { coords: [37.2153, 28.3636], popup: "<b>Y coin</b>", color: 'blue' },     // Muğla
-            { coords: [37.7833, 29.0904], popup: "<b>Z coin</b>", color: 'green' },  // Denizli
-            { coords: [39.9334, 32.8597], popup: "<b>M coin</b>", color: 'purple' }   // Ankara
+        // Şehirler
+        var points = [
+        { coords: [41.0082, 28.9784], name: "İstanbul", color: '#ff0000' },  // İstanbul
+        { coords: [39.9334, 32.8597], name: "Ankara", color: '#00ff00' },    // Ankara
+        { coords: [38.4192, 27.1287], name: "İzmir", color: '#0000ff' },      // İzmir
+        { coords: [37.7833, 29.0904], name: "Denizli", color: '#800080' },   // Denizli
+        { coords: [36.8969, 30.7133], name: "Antalya", color: '#ffa500' },   // Antalya
+        { coords: [41.0151, 28.9794], name: "Kocaeli", color: '#ff69b4' },   // Kocaeli
+        { coords: [40.7128, 29.0825], name: "Bursa", color: '#00ffff' },     // Bursa
+        { coords: [39.6384, 32.8597], name: "Eskişehir", color: '#ff4500' }, // Eskişehir
+        { coords: [37.3700, 40.7128], name: "Gaziantep", color: '#006400' }, // Gaziantep
+        { coords: [39.9334, 32.8597], name: "Konya", color: '#a52a2a' }     // Konya
         ];
 
-        markers.forEach(function(marker) {
-            L.marker(marker.coords, { icon: createCustomIcon(marker.color) }).addTo(map)
-                .bindPopup(marker.popup);
+        // Noktaları ve çizgileri ekleme
+        var polyline = [];
+        points.forEach(function(point, index) {
+            var marker = L.marker(point.coords, {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: '<div style="background-color:' + point.color + '"></div>',
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10],
+                    popupAnchor: [0, -10]
+                })
+            }).addTo(map)
+            .bindPopup("<b>" + point.name + "</b>");
+            
+            if (index > 0) {
+                L.polyline([points[index - 1].coords, point.coords], { color: 'blue' }).addTo(map);
+            }
+
+            polyline.push(marker);
         });
 
+        // Aralarındaki tüm noktaları bağlayan çizgi
+        L.polyline(points.map(point => point.coords), { color: 'blue' }).addTo(map);
     </script>
     <script>
         // Initialization for ES Users
-import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
-initMDB({ Dropdown, Collapse });
+        import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
+        initMDB({ Dropdown, Collapse });
     </script>
 </body>
-
 </html>

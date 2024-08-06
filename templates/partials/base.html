@@ -24,6 +24,53 @@
     <link href="{% static 'css/app.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{% static 'css/custom.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+    <style>
+        #map-container {
+            position: relative;
+        }
+        #map {
+            height: 700px;
+            width: 100%;
+        }
+        .legend-card {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 10px; /* Aligns the card to the right side */
+            width: 250px; /* Adjust width as needed */
+            z-index: 1000; /* Ensure the card is on top of the map */
+            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+            border: 1px solid #ddd; /* Border color */
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .navbar-nav .nav-item .badge {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            transform: translateY(-50%);
+            font-size: 0.75rem; /* Adjust the font size as needed */
+            background-color: #333; /* Dark gray color */
+            color: #fff; /* White text color */
+        }
+         .custom-marker {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red; /* Default color */
+            display: inline-block;
+            border: 2px solid white;
+        }
+        
+    </style>
     {% endblock css %}
 </head>
 
@@ -31,7 +78,7 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
         {% block header %}
-        {% include "partials/topbar.html" %}
+       
         {% endblock header %}
         
         {% block content %}

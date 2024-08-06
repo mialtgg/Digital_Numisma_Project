@@ -1,0 +1,83 @@
+{% load static %}
+{% block sub_topbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Left Side: Filter Dropdown -->
+        <button class="btn btn-outline dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+            <li>
+                <div class="dropdown-item">
+                    <span>By Name</span>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown-item">
+                    <span>By Location</span>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown-item">
+                    <span>By Date</span>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown-item">
+                    <span>By Category</span>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown-item">
+                    <span>By Status</span>
+                </div>
+            </li>
+        </ul>
+        <!-- Right Side: Info Icon -->
+        <div class="ms-auto">
+            <i class="fas fa-info-circle fa-lg" data-bs-toggle="modal" data-bs-target="#myModal" style="cursor: pointer;"></i>
+        </div>
+    </div>
+</nav>
+<div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="fs-15">
+                   ABOUT
+                </h5>
+                <p class="text-muted">AboutHeader Image
+                    Welcome to NOMISMATA database, geo and chrono reference of Byzantine Coin Finds (hoards, single finds and foundation deposits)
+                    
+                    Current version is 1.0 (beta version) - January 2023
+                    
+                    You can navigate via 4 header menus:
+                    
+                    Byzantine Coin Find- Mints- Coins- Sources
+                    
+                    You have also a Filter menu from where you pick your filter options
+                    
+                    When you select one or more filter you access the Menu bar (middle center screen) from where you can List, Map, Network, Chart the results of your queries
+                    
+                    By clicking on any object (dot, list, bar, etc.) you get access to the master data behind
+                    
+                    Middle right screen there is a legend, from where you can switch on/off what you see on the map
+                    
+                    Bottom screen there is the time slider you can use to diachronically see your data
+                    
+                    Any kind of feedback (especially bugs, imperfections, missing infos, etc.) is more than welcome.
+                    
+                    Pls address your feedback to: Giorgio Donato - Independent Researcher at University of Trieste (Italy) - Department of Humanities -
+                    GIORGIO.DONATO@studenti.units.it or giorgio.donato22@gmail.com</p>
+            </div>
+           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+       
+{% endblock sub_topbar %}

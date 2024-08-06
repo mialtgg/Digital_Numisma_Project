@@ -1,10 +1,55 @@
 {% load static %}
-{% block header %}
-        <header id="page-topbar">
-            <div class="layout-width">
-                <div class="navbar-header">
-                </div>
-            </div>
-        </header>
-       
-{% endblock header %}
+{% block topbar %}
+<!-- templates/partials/topbar.html -->
+<nav class="navbar navbar-expand-lg navbar-landing job-navbar" id="navbar">
+    <div class="container-fluid custom-container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'images/numisma/CZMD.png' %}" class="card-logo card-logo-dark" alt="logo dark" height="100">
+        </a>
+        <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="mdi mdi-menu"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'home' %}">Finds <span class="badge badge-custom-dark">5</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'coins' %}">Coins <span class="badge bg-dark">15</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seals' %}">Seals <span class="badge bg-dark">25</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'seal_issuer' %}">Seal Issuer <span class="badge bg-dark">5</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'sources' %}">Sources <span class="badge bg-dark">35</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mints' %}">Mints <span class="badge bg-dark">777</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'all_datas' %}">All datas <span class="badge bg-dark">7777777</span></a>
+                </li>                                             
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">                       
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ri-global-line align-bottom me-1"></i> Change Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="changeLanguage('en')">
+                            <span class="fi fi-gb me-2"></span> English
+                        </a>
+                        <a class="dropdown-item" href="#" onclick="changeLanguage('tr')">
+                            <span class="fi fi-tr me-2"></span> Türkçe
+                        </a>
+                    </div>
+                </li>
+            </ul>            
+        </div>
+    </div>
+</nav>
+{% endblock topbar %}

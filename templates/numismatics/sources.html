@@ -1,0 +1,207 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}Datatables{% endblock title %}
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+
+{% endblock extra_css %}
+{% block content %}
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="layout-wrapper landing">
+    {% include 'partials/topbar.html' %}
+    {% include 'partials/sub-topbar.html' %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+               
+                <div class="card-body">
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Full citation</th>
+                                <th>Cover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Add your table rows here -->
+                            <tr>
+                                <td>BETLYON 2008</td>
+                                <td>Wilson Betlyon, J., The Coins from the 1975-1978 Excavations</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ALFÖLDI & VIN van der 1992</td>
+                                <td>Alföldi, Maria R., Vin, J.P.A. van der, Die Fundmünzen der Römischen Zeit in den Niederlanden, Ab.I, Provinz Friesland, Berlin</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ANGEL, BURNS, FISHER, WILLIAMS II 1975</td>
+                                <td>Angel J. L., Burns P., Fisher J. E., Williams II C. K., Corinth, 1972: The Forum Area, in "Hesperia: The Journal of the American School of Classical Studies at Athens", vol. 42, no. 1, 1973, 1-44</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ANNIBALDI 1954</td>
+                                <td>Annibaldi G., Vita dei Medaglieri. Le immissioni nelle varie Soprintendenze dal 1950 al 1952. Soprintendenza alle Antichità delle Marche (Ancona-Museo Nazionale), in "Annali dell'Istituto Italiano di Numismatica", vol. 1, 1954, 157-158</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 1986</td>
+                                <td>Arslan, E., Il ripostiglio di minimi bizantini, Goti e Vandali da Fontana Liri (Frosinone) in Dai Civici Muei d'Arte e di Storia di Brescia - Studi e notizie n. 2 (1986)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 2023</td>
+                                <td>Arslan E., Le monete dallo scavo dell’area del Duomo di Milano e del battistero di San Giovanni, in Silvia Lusuardi Siena, Filippo Airoldi, Elena Spalla (eds), Milano Piazza Duomo prima del Duomo, Milano 2023, pp. 709-784. ISBN: 9788836641819</td>
+                                <td>elkjfeıods</td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 2024</td>
+                                <td>Saggio di Repertorio dei Ritrovamenti di Moneta Altomedievale, Bizantina e Islamica in Italia, con la moneta dei Vandali e dei Visigoti, a cura di E.A. ARSLAN, scaricabile nella versione più aggiornata in PDF, nel sito https://www.museobiassono.it/app/#/static/CataloghiRepertori</td>
+                                <td>lekjfoekfewj</td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN, FERRETTI, MURIALDO 2001</td>
+                                <td>E. Arslan, F. Ferretti, G. Murialdo, I reperti numismatici greci, romani e bizantini, in S. Antonino: un insediamento fortificato nella Liguria bizantina, a cura di T. Mannoni, G. Murialdo, Bordighera 2001, pp. 233-238.</td>
+                                <td>ehepkheıwweığhfew</td>
+                            </tr>
+                            <tr>
+                                <td>ARZONE 2008</td>
+                                <td>Arzone, A. Le monete in Area del Capitolium di Verona in L'area del Capitolium di Verona a cura di Cavalieri Manasse, G, Verona</td>
+                                <td>dmsnfsekdnfewks</td>
+                            </tr>
+                            <tr>
+                                <td>ASCSA.net</td>
+                                <td><a href="https://ambrosia.ascsa.net/id/corinth/coin/1995%20377">https://ambrosia.ascsa.net/id/corinth/coin/1995%20377</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2012</td>
+                                <td>Asolati M., Il ripostiglio di solidi bizantini da Villamarzana: brevi note, in "Praestantia Nummorum. Temi e note di numismatica tardo antica e alto medievale", 2012, 477-481, Padova</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2012a</td>
+                                <td>Asolati M., Nuove attestazioni di età bizantina dalla Laguna di Venezia (VI-XII secc.), in "Praestantia Nummorum. Temi e note di numismatica tardo antica e alto medievale", Padova, 2012, 321-338</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2013</td>
+                                <td>Asolati M., Urbs Salvia e il suo territorio in età tardo antica. Nuove evidenze numismatiche, in "Atti e Memorie della Deputazione di Storia Patria per le Marche", vol. 109, 2013, pp. 59-79</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2015</td>
+                                <td>Asolati M., Presenze di monete bizantine e di zecche orientali nell'Italia nord-orientale: nuovi dati da collezioni ottocentesche e novecentesche, in "Archeologia Veneta", 38, 129-141</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2018</td>
+                                <td>Asolati M., Presenze monetarie di età antica e altomedievale nel territorio cenedese, in "Antichità Altoadriatiche", 89, 2018, 283-298</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ALFÖLDI & VIN van der 1992</td>
+                                <td>Alföldi, Maria R., Vin, J.P.A. van der, Die Fundmünzen der Römischen Zeit in den Niederlanden, Ab.I, Provinz Friesland, Berlin</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ANGEL, BURNS, FISHER, WILLIAMS II 1975</td>
+                                <td>Angel J. L., Burns P., Fisher J. E., Williams II C. K., Corinth, 1972: The Forum Area, in "Hesperia: The Journal of the American School of Classical Studies at Athens", vol. 42, no. 1, 1973, 1-44</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ANNIBALDI 1954</td>
+                                <td>Annibaldi G., Vita dei Medaglieri. Le immissioni nelle varie Soprintendenze dal 1950 al 1952. Soprintendenza alle Antichità delle Marche (Ancona-Museo Nazionale), in "Annali dell'Istituto Italiano di Numismatica", vol. 1, 1954, 157-158</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 1986</td>
+                                <td>Arslan, E., Il ripostiglio di minimi bizantini, Goti e Vandali da Fontana Liri (Frosinone) in Dai Civici Muei d'Arte e di Storia di Brescia - Studi e notizie n. 2 (1986)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 2023</td>
+                                <td>Arslan E., Le monete dallo scavo dell’area del Duomo di Milano e del battistero di San Giovanni, in Silvia Lusuardi Siena, Filippo Airoldi, Elena Spalla (eds), Milano Piazza Duomo prima del Duomo, Milano 2023, pp. 709-784. ISBN: 9788836641819</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN 2024</td>
+                                <td>Saggio di Repertorio dei Ritrovamenti di Moneta Altomedievale, Bizantina e Islamica in Italia, con la moneta dei Vandali e dei Visigoti, a cura di E.A. ARSLAN, scaricabile nella versione più aggiornata in PDF, nel sito https://www.museobiassono.it/app/#/static/CataloghiRepertori</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARSLAN, FERRETTI, MURIALDO 2001</td>
+                                <td>E. Arslan, F. Ferretti, G. Murialdo, I reperti numismatici greci, romani e bizantini, in S. Antonino: un insediamento fortificato nella Liguria bizantina, a cura di T. Mannoni, G. Murialdo, Bordighera 2001, pp. 233-238.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ARZONE 2008</td>
+                                <td>Arzone, A. Le monete in Area del Capitolium di Verona in L'area del Capitolium di Verona a cura di Cavalieri Manasse, G, Verona</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASCSA.net</td>
+                                <td><a href="https://ambrosia.ascsa.net/id/corinth/coin/1995%20377">https://ambrosia.ascsa.net/id/corinth/coin/1995%20377</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2012</td>
+                                <td>Asolati M., Il ripostiglio di solidi bizantini da Villamarzana: brevi note, in "Praestantia Nummorum. Temi e note di numismatica tardo antica e alto medievale", 2012, 477-481, Padova</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2012a</td>
+                                <td>Asolati M., Nuove attestazioni di età bizantina dalla Laguna di Venezia (VI-XII secc.), in "Praestantia Nummorum. Temi e note di numismatica tardo antica e alto medievale", Padova, 2012, 321-338</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2013</td>
+                                <td>Asolati M., Urbs Salvia e il suo territorio in età tardo antica. Nuove evidenze numismatiche, in "Atti e Memorie della Deputazione di Storia Patria per le Marche", vol. 109, 2013, pp. 59-79</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2015</td>
+                                <td>Asolati M., Presenze di monete bizantine e di zecche orientali nell'Italia nord-orientale: nuovi dati da collezioni ottocentesche e novecentesche, in "Archeologia Veneta", 38, 129-141</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ASOLATI 2018</td>
+                                <td>Asolati M., Presenze monetarie di età antica e altomedievale nel territorio cenedese, in "Antichità Altoadriatiche", 89, 2018, 283-298</td>
+                                <td></td>
+                            </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<!-- end main content-->
+{% endblock content %}
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--datatable js-->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "pageLength": 10
+        });
+    });
+</script>
+{% endblock extra_js %}
