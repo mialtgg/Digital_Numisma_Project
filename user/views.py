@@ -18,3 +18,5 @@ def mints(request):
 
 def all_datas(request):
     return render(request, 'numismatics/all_datas.html')
+def start_page(request):
+    return render(request, 'numismatics/start-page.html')

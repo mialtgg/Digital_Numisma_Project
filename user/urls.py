@@ -2,8 +2,8 @@ from django.urls import path
 from .import views 
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('coins', views.coins, name='coins'),
+    path('', views.start_page, name='start_page'),
+    path('home', views.home, name='home'),
     path('coins/', views.coins, name='coins'),
     path('seals/', views.seals, name='seals'),
     path('seal-issuer/', views.seal_issuer, name='seal_issuer'),

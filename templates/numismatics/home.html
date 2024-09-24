@@ -26,82 +26,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- flag Css-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        #map-container {
-            position: relative;
-        }
-        #map {
-            height: 700px;
-            width: 100%;
-        }
-        .legend-card {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Aligns the card to the right side */
-            width: 250px; /* Adjust width as needed */
-            z-index: 1000; /* Ensure the card is on top of the map */
-            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-            border: 1px solid #ddd; /* Border color */
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .legend-color-box {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-        .navbar-nav .nav-item .badge {
-            position: absolute;
-            top: 0;
-            right: -10px;
-            transform: translateY(-50%);
-            font-size: 0.75rem; /* Adjust the font size as needed */
-            background-color: #333; /* Dark gray color */
-            color: #fff; /* White text color */
-        }
-         .custom-marker {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: red; /* Default color */
-            display: inline-block;
-            border: 2px solid white;
-        }
-        
-    </style>
+    
 </head>
         <div class="layout-wrapper landing">
-            {% include 'partials/topbar.html' %}
             {% include 'partials/sub-topbar.html' %}
-        <div id="map-container">
-            <div id="map"></div>
-            <div class="card legend-card">
-                <div class="card-body">
-                    
-                    <div class="legend-item">
-                        <div class="legend-color-box" style="background-color: #ff0000;"></div>
-                        <span>Hoard</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color-box" style="background-color: #00ff00;"></div>
-                        <span>Single Find</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color-box" style="background-color: #0000ff;"></div>
-                        <span>Grave</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color-box" style="background-color: #800080;"></div>
-                        <span>Seal</span>
-                    </div>
-                    <!-- Add more legend items as needed -->
-                </div>
-            </div>
-        </div>
-
+            {% include 'partials/topbar.html' %}
         </div>
         <!-- end layout wrapper -->
     <!-- JAVASCRIPT -->
