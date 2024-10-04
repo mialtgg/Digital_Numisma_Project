@@ -3,7 +3,7 @@
 <html lang="en" {% block html %}data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" {% endblock html %}>
 <head>
     <meta charset="utf-8" />
-    <title>{% block title %}{% endblock title %} |Numismata </title>
+    <title>{% block title %}{% endblock title %} | Velzon - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -24,53 +24,6 @@
     <link href="{% static 'css/app.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{% static 'css/custom.min.css'%}" id="app-style" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
-    <style>
-        #map-container {
-            position: relative;
-        }
-        #map {
-            height: 700px;
-            width: 100%;
-        }
-        .legend-card {
-            position: absolute;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Aligns the card to the right side */
-            width: 250px; /* Adjust width as needed */
-            z-index: 1000; /* Ensure the card is on top of the map */
-            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-            border: 1px solid #ddd; /* Border color */
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .legend-color-box {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-        .navbar-nav .nav-item .badge {
-            position: absolute;
-            top: 0;
-            right: -10px;
-            transform: translateY(-50%);
-            font-size: 0.75rem; /* Adjust the font size as needed */
-            background-color: #333; /* Dark gray color */
-            color: #fff; /* White text color */
-        }
-         .custom-marker {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: red; /* Default color */
-            display: inline-block;
-            border: 2px solid white;
-        }
-        
-    </style>
     {% endblock css %}
 </head>
 
@@ -78,11 +31,14 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
         {% block header %}
-       
+        {% include "partials/topbar.html" %}
         {% endblock header %}
-        
+        {% block sidebar %}
+        {% include "partials/sidebar.html" %}
+        {% endblock sidebar %}
         {% block content %}
-       
+        {% block pagetitle %}
+        {% endblock pagetitle %}
         {% block footer %}
         {% endblock footer %}
         {% endblock content %}
@@ -91,7 +47,10 @@
     {% block extra_content %}        
     {% endblock extra_content %}
         
- 
+    <!-- END layout-wrapper -->
+    {% block right_sidebar %}
+
+    {% endblock right_sidebar %}
 
     {% block javascript %}
     <!-- JAVASCRIPT -->
