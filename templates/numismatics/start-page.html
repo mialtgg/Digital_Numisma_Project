@@ -1,8 +1,13 @@
+
+
 {% load static %}
+
 
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
-
+   <!-- Bootstrap Css -->
+   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" /><!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
 <head>
 
     <meta charset="utf-8" />
@@ -21,9 +26,9 @@
 
     <!-- Layout config Js -->
     <script src="{% static 'js/layout.js' %}"></script>
-    <!-- Bootstrap Css -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
-    
+ 
+ 
+        
     <!-- Icons Css -->
     <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
@@ -44,83 +49,10 @@
 
     <!-- Begin page -->
     <div class="layout-wrapper landing">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <!-- Left Side: Brand Logo -->
-                <a class="navbar-brand" href="/">
-                    <img src="{% static 'images/numisma/logoson.png' %}" class="card-logo card-logo-dark" alt="logo dark" height="200" style="border-radius: 45%;">
-                    <img src="{% static 'images/numisma/logoson.png' %}" class="card-logo card-logo-light" alt="logo light" height="200" style="border-radius: 45%;">
-                </a>
-                
-                <!-- Right Side: Info Icons and Buttons -->
-                <div class="d-flex flex-column align-items-end ms-lg-auto me-5"> 
-                    <ul class="navbar-nav mt-2 mb-3">
-                        <li class="nav-item me-3">
-                            <a class="btn btn-outline-dark btn-custom" href="#" role="button"><strong>About Us</strong></a>
-                        </li>
-                        <li class="nav-item me-3">
-                            <a class="btn btn-outline-dark btn-custom" href="#" role="button"><strong>Contact</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-dark btn-custom" href="#" role="button"><strong>EN | TR</strong></a>
-                        </li>
-                    </ul>
-        
-                    <!-- Additional Title Below (with spacing) -->
-                    <div class="mt-4">
-                      <h5 class="text-uppercase" style="letter-spacing: 1px; font-family: 'Arial', sans-serif; color: #4a4a4a; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
-                        DIGITAL BYZANTINE NUMISMATIC PROJECT OF ANATOLIA
-                    </h5>
-                    
-                    </div>
-                </div>
-            </div>
-            
-        </nav>
+        {% include "partials/sub-topbar.html" %}
+        {% include "partials/topbar.html" %}
        
-        <nav class="navbar navbar-expand-lg navbar-landing job-navbar" id="navbar">
-    <div class="container-fluid custom-container">
-        <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="mdi mdi-menu"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
-                <!-- Coins Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCoins" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Byzantine Coins
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownCoins">
-                        <li><a class="dropdown-item" href="#">Emperor</a></li>
-                        <li><a class="dropdown-item" href="#">Mint</a></li>
-                        <li><a class="dropdown-item" href="#">Metal</a></li>
-                    </ul>
-                </li>
-
-                <!-- Seals Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSeals" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Byzantine Seals
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownSeals">
-                        <li><a class="dropdown-item" href="#">Imperial</a></li>
-                        <li><a class="dropdown-item" href="#">Administrative</a></li>
-                        <li><a class="dropdown-item" href="#">Personal</a></li>
-                        <li><a class="dropdown-item" href="#">Anonymous</a></li>
-                    </ul>
-                </li>
-
-                <!-- Static Links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Map</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Publications</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+     
 </nav>
       
             <div class="bg-overlay bg-overlay-pattern"></div>
@@ -374,7 +306,10 @@
 
     
     <!-- JAVASCRIPT -->
-    <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+
+
+
     <script src="{% static 'libs/simplebar/simplebar.min.js' %}"></script>
     <script src="{% static 'libs/node-waves/waves.min.js' %}"></script>
     <script src="{% static 'libs/feather-icons/feather.min.js' %}"></script>
