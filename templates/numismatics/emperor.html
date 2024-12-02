@@ -1,173 +1,160 @@
-
-
-{% load static %}
-
-
-<!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
-   <!-- Bootstrap Css -->
-   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" /><!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-
-    <meta charset="utf-8" />
-    <title>Nümisma Project</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <meta name="description" content="Byzantine İmparator Listesi">
+    <title>Byzantine İmparator Listesi</title>
 
-    <!--Swiper slider css-->
-    <link href="{% static 'libs/swiper/swiper-bundle.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS Linki -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Layout config Js -->
-    <script src="{% static 'js/layout.js' %}"></script>
- 
- 
-        
-    <!-- Icons Css -->
-    <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="{% static 'css/app.min.css' %}" rel="stylesheet" type="text/css" />
-    <!-- custom Css-->
-    <link href="{% static 'css/custom.min.css' %}" rel="stylesheet" type="text/css" />
-        <!-- Flag css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+    <!-- DataTables CSS Linki -->
+    <link href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-TcqTR6HE+KwOqIv7UrRmbnNbb0EtDQ0SwlwCjz3U0S7dB98FsO2XR4D+YeyPpA6T" crossorigin=""/>
-
-   
-
+    <style>
+        /* Özel Stil: Tablonun daha şık görünmesi için */
+        table.dataTable {
+            width: 100% !important;
+            margin: 20px 0;
+        }
+        .dataTables_length, .dataTables_filter {
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Byzantine Emperor list</h1>
+    </header>
 
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- DataTable Tabloları -->
+        <table id="imparatorListesi" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>İmparatorluk</th>
+                    <th>İmparator</th>
+                    <th>Görev Süresi</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr><td>Byzantine Empire</td><td>Anastasius I</td><td>491-518</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justin I</td><td>518-527</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justin I and Justinian I</td><td>527</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justinian I</td><td>527-565</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justin II</td><td>565-578</td></tr>
+                <tr><td>Byzantine Empire</td><td>Tiberius II Constantine</td><td>578-582</td></tr>
+                <tr><td>Byzantine Empire</td><td>Maurice Tiberius</td><td>582-602</td></tr>
+                <tr><td>Byzantine Empire</td><td>Phocas</td><td>602-610</td></tr>
+                <tr><td>Byzantine Empire</td><td>Heraclius Constantine</td><td>610-641</td></tr>
+                <tr><td>Byzantine Empire</td><td>Constans II</td><td>641-668</td></tr>
+                <tr><td>Byzantine Empire</td><td>Constantine IV</td><td>668-685</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justinian II (First Reign)</td><td>685-695</td></tr>
+                <tr><td>Byzantine Empire</td><td>Leontius</td><td>695-698</td></tr>
+                <tr><td>Byzantine Empire</td><td>Tiberius III</td><td>698-705</td></tr>
+                <tr><td>Byzantine Empire</td><td>Justinian II (Second Reign)</td><td>705-711</td></tr>
+                <tr><td>Byzantine Empire</td><td>Philippicus</td><td>711-713</td></tr>
+                <tr><td>Byzantine Empire</td><td>Anastasius II</td><td>713-715</td></tr>
+                <tr><td>Byzantine Empire</td><td>Theodosius III</td><td>715-717</td></tr>
+                <tr><td>Byzantine Empire</td><td>Leo III</td><td>717-741</td></tr>
+                <tr><td>Byzantine Empire</td><td>Artavasdus</td><td>742-743</td></tr>
+                <tr><td>Byzantine Empire</td><td>Constantine V Copronymus</td><td>741-775</td></tr>
+                <tr><td>Byzantine Empire</td><td>Leo IV</td><td>775-780</td></tr>
+                <tr><td>Byzantine Empire</td><td>Constantine VI</td><td>780-797</td></tr>
+                <tr><td>Byzantine Empire</td><td>Irene</td><td>797-802</td></tr>
+                <tr><td>Byzantine Empire</td><td>Nicephorus I</td><td>802-811</td></tr>
+                <tr><td>Byzantine Empire</td><td>Stauracius</td><td>811</td></tr>
+                <tr><td>Byzantine Empire</td><td>Michael I Rangabe</td><td>811-813</td></tr>
+                <tr><td>Byzantine Empire</td><td>Leo V</td><td>813-820</td></tr>
+                <tr><td>Byzantine Empire</td><td>Michael II</td><td>820-829</td></tr>
+                <tr><td>Byzantine Empire</td><td>Theophilus</td><td>829-842</td></tr>
+                <tr><td>Byzantine Empire</td><td>Michael III</td><td>842-867</td></tr>
+                <tr><td>Byzantine Empire</td><td>Basil I</td><td>867-886</td></tr>
+                <tr><td>Byzantine Empire</td><td>Leo VI</td><td>886-912</td></tr>
+                <tr><td>Byzantine Empire</td><td>Alexius III Angelus-Comnenus</td><td>1195-1204</td></tr>
+                <tr><td>Byzantine Empire</td><td>Isaac II Angelus (Restored) and Alexius IV Angelus</td><td>1203-1204</td></tr>
+                <tr><td>Byzantine Empire</td><td>Alexius V Ducas</td><td>1204</td></tr>
 
-  
-    
+                <!-- The Mint of Trebizond -->
+                <tr><td>The Mint of Trebizond</td><td>Bulgarian Imitative Coinage</td><td>1195-1215?</td></tr>
 
+                <!-- The Empire of Nicaea -->
+                <tr><td>The Empire of Nicaea</td><td>Theodore I Comnenus-Lascaris</td><td>1205/8-1221</td></tr>
+                <tr><td>The Empire of Nicaea</td><td>John III Ducas-Vatatzes</td><td>1221-1254</td></tr>
+                <tr><td>The Empire of Nicaea</td><td>Theodore II Ducas-Lascaris</td><td>1254-1258</td></tr>
+                <tr><td>The Empire of Nicaea</td><td>Michael VII Ducas-Angelus-Comnenus-Palaeologos</td><td>1258-1261</td></tr>
 
+                <!-- The Late Byzantine Empire / The Palaeologan Dynasty -->
+                <tr><td>The Late Byzantine Empire</td><td>Michael VII</td><td>1259-1282</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>Andronicus II</td><td>1282-1328</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>Andronicus III</td><td>1328-1341</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>John V</td><td>1341-1391</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>Andronicus IV</td><td>1376-1379</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>Manuel II</td><td>1391-1425</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>John VII</td><td>1399-1403 (regent)</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>John VII</td><td>1425-1448</td></tr>
+                <tr><td>The Late Byzantine Empire</td><td>Constantine XI Dragases</td><td>1449-1453</td></tr>
 
-  <!-- Variants Table -->
-<table class="table table-nowrap">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Empire</th>
-            <th scope="col">Reign Period</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="table-primary">
-            <td>1</td>
-            <td>Anastasius I</td>
-            <td>Byzantine Empire</td>
-            <td>491-518</td>
-        </tr>
-        <tr class="table-secondary">
-            <td>2</td>
-            <td>Justin I</td>
-            <td>Byzantine Empire</td>
-            <td>518-527</td>
-        </tr>
-        <tr class="table-success">
-            <td>3</td>
-            <td>Justin I and Justinian I</td>
-            <td>Byzantine Empire</td>
-            <td>527</td>
-        </tr>
-        <tr class="table-danger">
-            <td>4</td>
-            <td>Justinian I</td>
-            <td>Byzantine Empire</td>
-            <td>527-565</td>
-        </tr>
-        <tr class="table-warning">
-            <td>5</td>
-            <td>Justinian II</td>
-            <td>Byzantine Empire</td>
-            <td>565-578</td>
-        </tr>
-        <tr class="table-info">
-            <td>6</td>
-            <td>Tiberius II Constantine</td>
-            <td>Byzantine Empire</td>
-            <td>578-582</td>
-        </tr>
-        <tr class="table-light">
-            <td>7</td>
-            <td>Maurice Tiberius</td>
-            <td>Byzantine Empire</td>
-            <td>582-602</td>
-        </tr>
-        <tr class="table-dark">
-            <td>8</td>
-            <td>Phocas</td>
-            <td>Byzantine Empire</td>
-            <td>602-610</td>
-        </tr>
-        <tr class="table-primary">
-            <td>9</td>
-            <td>Heraclius Constantine</td>
-            <td>Byzantine Empire</td>
-            <td>610-641</td>
-        </tr>
-        <tr class="table-secondary">
-            <td>10</td>
-            <td>Constans II</td>
-            <td>Byzantine Empire</td>
-            <td>641-668</td>
-        </tr>
-        <tr class="table-success">
-            <td>11</td>
-            <td>Theodore I Comnenus-Lascaris</td>
-            <td>The Empire of Nicaea</td>
-            <td>1205/8-1221</td>
-        </tr>
-        <tr class="table-danger">
-            <td>12</td>
-            <td>John III Ducas-Vatatzes</td>
-            <td>The Empire of Nicaea</td>
-            <td>1221-1254</td>
-        </tr>
-        <tr class="table-warning">
-            <td>13</td>
-            <td>Theodore II Ducas-Lascaris</td>
-            <td>The Empire of Nicaea</td>
-            <td>1254-1258</td>
-        </tr>
-        <tr class="table-info">
-            <td>14</td>
-            <td>Michael VII Ducas-Angelus-Comnenus-Palaeologos with John IV Lascaris as Colleague</td>
-            <td>The Empire of Nicaea</td>
-            <td>1258-1261</td>
-        </tr>
-        <tr class="table-light">
-            <td>15</td>
-            <td>Epirus/Arta</td>
-            <td>Other Rulers</td>
-            <td>-</td>
-        </tr>
-        <tr class="table-dark">
-            <td>16</td>
-            <td>The Latin States</td>
-            <td>Other Rulers</td>
-            <td>-</td>
-        </tr>
-    </tbody>
-</table>
+                <!-- Emperors of Trebizond Empire -->
+                <tr><td>Trebizond Empire</td><td>Alexius I Comnenus</td><td>1204-1222</td></tr>
+                <tr><td>Trebizond Empire</td><td>Andronicus I Gidon</td><td>1222-1235</td></tr>
+                <tr><td>Trebizond Empire</td><td>John I Comnenus</td><td>1235-1238</td></tr>
+                <tr><td>Trebizond Empire</td><td>Manuel I Comnenus</td><td>1238-1263</td></tr>
+                <tr><td>Trebizond Empire</td><td>Andronicus II Comnenus</td><td>1263-1266</td></tr>
+                <tr><td>Trebizond Empire</td><td>George Comnenus</td><td>1266-1280</td></tr>
+                <tr><td>Trebizond Empire</td><td>John II Comnenus</td><td>1280-1297</td></tr>
+                <tr><td>Trebizond Empire</td><td>Theodora Comnenus</td><td>1285</td></tr>
+                <tr><td>Trebizond Empire</td><td>Alexius II Comnenus</td><td>1297-1330</td></tr>
+                <tr><td>Trebizond Empire</td><td>Andronicus III Comnenus</td><td>1330-1332</td></tr>
+                <tr><td>Trebizond Empire</td><td>Manuel II Comnenus</td><td>1332</td></tr>
+                <tr><td>Trebizond Empire</td><td>Basileios Megas Comnenus</td><td>1332-1340</td></tr>
+                <tr><td>Trebizond Empire</td><td>Irene Palaeologina</td><td>1340-1341</td></tr>
+                <tr><td>Trebizond Empire</td><td>Anna Temmuz</td><td>1341-1342</td></tr>
+                <tr><td>Trebizond Empire</td><td>John III Comnenus</td><td>1342-1344</td></tr>
+                <tr><td>Trebizond Empire</td><td>Michael Comnenus</td><td>1344-1349</td></tr>
+                <tr><td>Trebizond Empire</td><td>Alexius III Comnenus</td><td>1349-1390</td></tr>
+                <tr><td>Trebizond Empire</td><td>Manuel III Comnenus</td><td>1390-1417</td></tr>
+                <tr><td>Trebizond Empire</td><td>Alexius IV Comnenus</td><td>1417-1446</td></tr>
+                <tr><td>Trebizond Empire</td><td>John IV Comnenus (Kalojohannes)</td><td>1446-1458</td></tr>
+                <tr><td>Trebizond Empire</td><td>David Comnenus</td><td>1458-1461</td></tr>
+            </tbody>
+        </table>
+    </div>
 
-        
+    <!-- Bootstrap JS ve Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
+    <!-- jQuery ve DataTables JS Linki -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
-
-
-
+    <script>
+        $(document).ready(function() {
+            // DataTable'ı başlat
+            $('#imparatorListesi').DataTable({
+                "paging": true, // Sayfalama
+                "searching": true, // Arama
+                "ordering": true, // Sıralama
+                "info": true, // Bilgi
+                "lengthMenu": [5, 10, 25, 50, 75, 100] // Sayfa başına gösterilecek satır sayısı
+            });
+        });
+    </script>
 </body>
-
 </html>
