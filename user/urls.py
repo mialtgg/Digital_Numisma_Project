@@ -10,4 +10,5 @@ urlpatterns = [
     path('sources/', views.sources, name='sources'),
     path('mints/', views.mints, name='mints'),
     path('all-datas/', views.all_datas, name='all_datas'),
+    path('emperor/', views.emperor_page, name='emperor'),
 ]

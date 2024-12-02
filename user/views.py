@@ -20,3 +20,5 @@ def all_datas(request):
     return render(request, 'numismatics/all_datas.html')
 def start_page(request):
     return render(request, 'numismatics/start-page.html')
+def emperor_page(request):
+    return render(request, 'numismatics/emperor.html')
